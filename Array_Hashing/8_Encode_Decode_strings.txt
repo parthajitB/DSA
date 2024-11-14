@@ -17,6 +17,8 @@ Explanation: The encode() function will have the str as input, it will be encode
 
 https://www.geeksforgeeks.org/problems/encode-and-decode-strings/1
 
+Note:  In leetcode in was asking for becoming premium hence solved from GeeksforGeeks link.
+		https://leetcode.com/problems/encode-and-decode-strings/description/
 
 **/
 
