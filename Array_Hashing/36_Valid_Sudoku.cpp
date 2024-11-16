@@ -61,5 +61,5 @@ public:
 };
 
 
-Time complexity:  O(n2)
-space complexity:  O(n2)
+Time complexity:  O(n2)   ---   O(1) 
+space complexity:  O(n2)	--- O(1)
