@@ -20,6 +20,42 @@ Product of Array Except Self
 https://leetcode.com/problems/product-of-array-except-self/description/		
 **/
 
+// BEST solution
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+
+        vector<int> rVector;
+        int n=nums.size();
+        int prefix[n],suffix[n];
+        prefix[0]=1;
+
+        for(int i=1;i<n;i++)
+        {
+            prefix[i]=prefix[i-1] * nums[i-1];
+        }
+
+        suffix[n-1]=1;
+
+        for(int i=n-2;i>=0;i--)
+        {
+            suffix[i]=suffix[i+1] * nums[i+1];
+        }
+
+        for(int i=0;i<n;i++)
+        {
+            rVector.push_back(prefix[i] * suffix[i]);
+        }
+
+        return rVector;
+
+    }
+};
+Time Complexity: O(n)
+
+Space Complexity: O(n) + O(n)  = O(n)
+
+//===================================================
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {

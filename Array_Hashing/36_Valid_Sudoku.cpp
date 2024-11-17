@@ -63,3 +63,5 @@ public:
 
 Time complexity:  O(n2)   ---   O(1) 
 space complexity:  O(n2)	--- O(1)
+
+Becasue here n is defined and we know the N , hence its constant work 
