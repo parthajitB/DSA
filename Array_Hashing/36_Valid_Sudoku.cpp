@@ -12,8 +12,50 @@
 	
 	https://leetcode.com/problems/valid-sudoku/description/
 	
+	https://www.youtube.com/watch?v=RdakO1_niYE&t=19s
+	
 **/
+// LATEST one 
+class Solution {
+public:
+    bool isValidSudoku(vector<vector<char>>& board) {
 
+        unordered_set<char> row[9];
+        unordered_set<char> col[9];
+        unordered_set<char> subbox[9];
+
+        for(int i=0;i<9;i++)
+        {
+            for(int j=0;j<9;j++)
+            {
+                if( board[i][j] == '.')
+                    continue;
+
+                char value=board[i][j];
+
+                int boxIndex= (i/3)  * 3 + (j/3);
+
+                if( row[i].count(value) || col[j].count(value) || subbox[boxIndex].count(value) )
+                {
+                    return false;
+                }
+
+                row[i].insert(value);
+                col[j].insert(value);
+                subbox[boxIndex].insert(value);
+            }
+        }
+
+        return true;
+    }
+};
+Time complexity: O(81) → O(1)
+			rows(9) * columns(9)=81
+
+Space complexity: O(243) → O(1)
+		rows(81)+columns(81)+boxes(81)=243
+
+//=================================================
 
 class Solution {
 public:
